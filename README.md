@@ -13,23 +13,13 @@ Installation
 If you are using npm, you can get i18next-ko with `npm install i18next-ko`. It
 works like a charm with Browserify, just `require('i18next-ko')`.
 
-If you use bower, you can get i18next-ko with `bower install i18next-ko`.
-
-You can also use the [prebuilt standalone file][prebuilt] that works in every
-environment.
-
-Note that while i18next is included in the standalone build and as dependency in
-the npm package, KnockoutJS is not.
-
-[prebuilt]: https://raw.githubusercontent.com/leMaik/i18next-ko/master/lib/i18next-ko.js
-
 Usage
 =====
 
 Initialization
 --------------
 To initialize i18next-ko, you need to call `i18nextko.init()`. It takes the
-following parameters: `i18nextko.init(resourceStore, language, ko)`.
+following parameters: `i18nextko.init(resourceStore, language, i18next, ko)`.
 
 * The `resourceStore` is a i18next resource store. It looks like this:
 ```
@@ -50,6 +40,7 @@ following parameters: `i18nextko.init(resourceStore, language, ko)`.
 
 * The `language` is the language that will be used by default.
   Defaults to `'en'`.
+* `i18next` is the i18next object. Defaults to `window.i18n`.
 * You may set `ko` to your KnockoutJS object. Usually, this is not needed but
   it may solve some issues if you use Browserify and have some dependencies that
   require different versions of KnockoutJS.

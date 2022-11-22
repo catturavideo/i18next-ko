@@ -1,11 +1,5 @@
 (function () {
-  var i18n;
-  if (typeof require !== 'undefined') {
-    i18n = require('i18next');
-  } else {
-    i18n = window.i18n;
-  }
-  var ko, $;
+  var ko, $, i18n;
 
   var koBindingHandler = {
     init: function (element, valueAccessor, allBindingsAccessor, viewModel, bindingContext) {
@@ -70,9 +64,11 @@
       });
     },
 
-    init: function (resources, language, knockout, jquery, options) {
+    init: function (resources, language, i18next, knockout, jquery, options) {
       ko = knockout || window.ko;
       $ = jquery || window.$;
+      i18n = i18next || window.i18n;
+      i18nextko.i18n = i18n;
 
       i18n.init(
         ko.utils.extend(options || {}, {
@@ -93,9 +89,7 @@
         i18nextko._language(); //to auto-update this computed observable on language changes
         return i18n.t.apply(i18n, args);
       });
-    },
-
-    i18n: i18n
+    }
   };
 
   if (typeof module !== 'undefined') {

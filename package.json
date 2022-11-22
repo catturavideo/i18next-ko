@@ -1,8 +1,8 @@
 {
   "name": "i18next-ko",
-  "version": "3.0.1",
+  "version": "3.1.0",
   "description": "KnockoutJS bindings for i18next.",
-  "main": "lib/i18next-ko.bundle.js",
+  "main": "src/i18next-ko.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -18,9 +18,7 @@
   ],
   "author": "leMaik",
   "license": "MIT",
-  "dependencies": {
-    "i18next": "^3.4.3"
-  },
+  "dependencies": {},
   "devDependencies": {
     "browserify": "^11.0.1",
     "coffee-script": "^1.9.3",
